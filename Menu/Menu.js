@@ -37,7 +37,6 @@ function createMenu(menu) {
   const menuContainer = document.createElement("div");
   let uList = document.createElement("ul");
   menuContainer.classList.add("menu");
-  menuContainer.append(uList);
 
   menu.forEach(x => {
     //looping over the data
@@ -47,8 +46,10 @@ function createMenu(menu) {
     uList.append(li); //appending li to ul
   });
 
+  menuContainer.append(uList);
+
   const menuBtn = document.querySelector(".menu-button");
-  menuBtn.addEventListener("click", () => {
+  menuBtn.addEventListener("click", e => {
     menuContainer.classList.toggle("menu--open");
   });
   return menuContainer;
